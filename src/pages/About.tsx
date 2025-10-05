@@ -5,28 +5,32 @@ import profileImage from "@/assets/himanshu-Profile-new.jpg";
 const About = () => {
   const journey = [
     {
-      year: "2021 - 1st Year",
-      title: "Foundation Building",
-      description: "Started my journey with programming fundamentals in C++ and Java. Learned basic web technologies and got introduced to the world of software development.",
-      skills: ["C++", "Java", "HTML", "CSS"]
+      year: "2022",
+      title: "Academic Foundation & Programming Basics",
+      description:
+        "Started B.Tech (CSE) at GEHU Bhimtal. Built strong foundations in programming (C++ & Java) and learned basic web technologies (HTML, CSS). Began solving algorithmic problems and using Git/GitHub.",
+      skills: ["C++", "Java", "HTML", "CSS", "Git"]
     },
     {
-      year: "2022 - 2nd Year", 
-      title: "Web Development Focus",
-      description: "Dove deep into frontend development with JavaScript and React. Built my first web projects and learned about responsive design principles.",
-      skills: ["JavaScript", "React", "Responsive Design", "Git"]
+      year: "2023",
+      title: "Web Development & Projects",
+      description:
+        "Focused on front-end development with JavaScript and React. Built portfolio projects, learned responsive design and component-based architecture, and practiced deployment workflows (GitHub Pages / Vercel).",
+      skills: ["JavaScript", "React", "Responsive Design", "Vite", "Deployment"]
     },
     {
-      year: "2023 - 3rd Year",
-      title: "Full-Stack Development",
-      description: "Expanded to backend development with Node.js and databases. Started building complete web applications and learned about API development.",
-      skills: ["Node.js", "MongoDB", "REST APIs", "Express"]
+      year: "2024",
+      title: "Applied ML & OCR — Practical Projects",
+      description:
+        "Built OCR with keyword search using Python, EasyOCR and Gradio. Worked on multilingual text extraction (Hindi + English) and created an interactive web interface for live demos and integration.",
+      skills: ["Python", "EasyOCR", "Gradio"]
     },
     {
-      year: "2024 - 4th Year",
-      title: "AI & Innovation",
-      description: "Currently exploring AI integration, computer vision with OpenCV, and advanced technologies like TypeScript and modern frameworks.",
-      skills: ["AI/ML", "OpenCV", "TypeScript", "Advanced React"]
+      year: "2025",
+      title: "Full-Stack & AI Projects, Internship",
+      description:
+        "Worked on Full-Stack AI projects — Imagify (text-to-image SaaS) and Interview.ai (AI mock interviews). Started Front-End internship at Edunet Foundation (IBM SkillsBuild, Aug 2025) focusing on production-ready responsive front-end development and industry workflows.",
+      skills: ["React", "Next.js", "Supabase", "Edge Functions", "OpenAI/LLMs"]
     }
   ];
 
@@ -68,7 +72,7 @@ const About = () => {
                     <GraduationCap className="text-neon-blue" size={24} />
                     <div>
                       <p className="font-semibold">Education</p>
-                      <p className="text-sm text-muted-foreground">B.Tech CSE, GEHU Bhimtal</p>
+                      <p className="text-sm text-muted-foreground">B.Tech CSE, GEHU Bhimtal (2022 - 2026)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -92,7 +96,7 @@ const About = () => {
                     <MapPin className="text-neon-purple" size={24} />
                     <div>
                       <p className="font-semibold">Location</p>
-                      <p className="text-sm text-muted-foreground">Bhimtal, India</p>
+                      <p className="text-sm text-muted-foreground">Bhimtal, Uttarakhand</p>
                     </div>
                   </div>
                 </CardContent>
@@ -106,21 +110,13 @@ const About = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4">Hello! I'm Himanshu Goswami</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I'm a final-year B.Tech Computer Science Engineering student at GEHU Bhimtal, passionate about 
-                  creating innovative solutions through technology. My journey in software development began in 2022, 
-                  and since then, I've been on an exciting path of continuous learning and building.
+                  I'm a final-year B.Tech Computer Science and Engineering student at GEHU Bhimtal. I build full-stack web apps and AI-powered tools — with projects ranging from OCR systems to text-to-image SaaS and AI mock-interview platforms.
                 </p>
                 <p>
-                  My interests span across <span className="text-primary font-semibold">full-stack web development</span>, 
-                  <span className="text-primary font-semibold"> compiler tools</span>, 
-                  <span className="text-primary font-semibold"> OCR technology</span>, and 
-                  <span className="text-primary font-semibold"> artificial intelligence</span>. 
-                  I believe in the power of technology to solve real-world problems and create meaningful impact.
+                  My interests include <span className="text-primary font-semibold">full-stack development</span>, <span className="text-primary font-semibold">applied AI</span>, and <span className="text-primary font-semibold">computer vision</span>. I love turning research ideas into working demos and learning by building.
                 </p>
                 <p>
-                  Beyond academics, I actively participate in hackathons, contribute to open-source projects, 
-                  and engage in internships to gain practical experience. I'm always eager to learn new technologies 
-                  and collaborate on exciting projects that push the boundaries of what's possible.
+                  Outside academics, I participate in hackathons, contribute to open-source, and complete virtual experience programs (Forage, NxtWave). I also actively upskill through online courses and workshops.
                 </p>
               </div>
             </div>
@@ -131,8 +127,7 @@ const About = () => {
                 <div>
                   <h3 className="font-semibold mb-2">My Mission</h3>
                   <p className="text-sm opacity-90">
-                    To leverage cutting-edge technologies and create scalable, user-friendly applications 
-                    that make a positive difference in people's lives while continuously evolving as a developer.
+                    Build practical, well-engineered applications that solve real problems — and keep learning new tech along the way.
                   </p>
                 </div>
               </div>

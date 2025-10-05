@@ -73,12 +73,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom text */}
-        <div className="mt-6 pt-6 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground">
-            Built with ❤️ using React, TypeScript & Tailwind CSS
-          </p>
-        </div>
+       
       </div>
     </footer>
   );

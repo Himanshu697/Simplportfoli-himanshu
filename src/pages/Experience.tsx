@@ -12,16 +12,24 @@ const Experience = () => {
       type: "Internship",
       duration: "Aug 2025 - Present",
       location: "Remote",
-      description: "Currently working on developing responsive front-end projects using HTML, CSS, and JavaScript. Engaging with IBM SkillsBuild platform courses and technical sessions to strengthen core front-end skills.",
+      description:
+        "Currently working on developing responsive front-end projects using HTML, CSS, and JavaScript. Engaging with IBM SkillsBuild platform courses and technical sessions to strengthen core front-end skills.",
       responsibilities: [
         "Developing responsive front-end projects using HTML, CSS, and JavaScript",
         "Engaging in IBM SkillsBuild platform courses and technical sessions",
         "Collaborating with mentors through weekly sessions",
         "Preparing for project presentation and submission",
-        "Working towards AICTE & Edunet Foundation Certification"
+        "Working towards AICTE & Edunet Foundation Certification",
       ],
-      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "IBM SkillsBuild", "Frontend Development"],
-      color: "border-neon-blue"
+      skills: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive Design",
+        "IBM SkillsBuild",
+        "Frontend Development",
+      ],
+      color: "border-neon-blue",
     },
     {
       id: 2,
@@ -30,17 +38,24 @@ const Experience = () => {
       type: "Leadership Program",
       duration: "2023",
       location: "Remote",
-      description: "Recognized for outstanding performance as a campus ambassador, promoting internship opportunities and organizing career development events among fellow students.",
+      description:
+        "Recognized for outstanding performance as a campus ambassador, promoting internship opportunities and organizing career development events among fellow students.",
       responsibilities: [
         "Campus outreach and student engagement",
-        "Promoting internship opportunities to students", 
+        "Promoting internship opportunities to students",
         "Organizing career development events",
         "Student career guidance and mentoring",
-        "Brand ambassador activities and networking"
+        "Brand ambassador activities and networking",
       ],
-      skills: ["Leadership", "Communication", "Event Management", "Marketing", "Student Engagement"],
-      color: "border-neon-green"
-    }
+      skills: [
+        "Leadership",
+        "Communication",
+        "Event Management",
+        "Marketing",
+        "Student Engagement",
+      ],
+      color: "border-neon-green",
+    },
   ];
 
   return (
@@ -59,7 +74,7 @@ const Experience = () => {
         {/* Experience Cards */}
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card 
+            <Card
               key={exp.id}
               className={`bg-card border-2 ${exp.color} hover:shadow-neon transition-all duration-300 animate-slideIn`}
               style={{ animationDelay: `${index * 200}ms` }}
@@ -72,13 +87,15 @@ const Experience = () => {
                       {exp.role}
                     </CardTitle>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <h3 className="text-lg font-semibold text-primary">{exp.company}</h3>
+                      <h3 className="text-lg font-semibold text-primary">
+                        {exp.company}
+                      </h3>
                       <Badge variant="secondary" className="w-fit">
                         {exp.type}
                       </Badge>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col sm:flex-row gap-2 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Calendar size={16} />
@@ -91,7 +108,7 @@ const Experience = () => {
                   </div>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 {/* Description */}
                 <p className="text-muted-foreground leading-relaxed">
@@ -100,10 +117,15 @@ const Experience = () => {
 
                 {/* Responsibilities */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Key Responsibilities:</h4>
+                  <h4 className="font-semibold text-foreground mb-3">
+                    Key Responsibilities:
+                  </h4>
                   <ul className="grid md:grid-cols-2 gap-2">
                     {exp.responsibilities.map((responsibility, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-muted-foreground"
+                      >
                         <span className="text-primary mt-1.5 text-xs">●</span>
                         <span className="text-sm">{responsibility}</span>
                       </li>
@@ -113,12 +135,14 @@ const Experience = () => {
 
                 {/* Skills */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Technologies & Skills:</h4>
+                  <h4 className="font-semibold text-foreground mb-3">
+                    Technologies & Skills:
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {exp.skills.map((skill) => (
-                      <Badge 
+                      <Badge
                         key={skill}
-                        variant="outline" 
+                        variant="outline"
                         className="border-primary/30 text-primary hover:bg-primary/10"
                       >
                         {skill}
@@ -131,110 +155,15 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Additional Experience Section */}
-        <div className="mt-16 animate-fadeIn">
-          <h2 className="text-3xl font-bold text-center bg-gradient-secondary bg-clip-text text-transparent mb-8">
-            Virtual Experience & Training
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-card border border-border hover:border-primary hover:shadow-glow-blue transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2">OpenAI & NxtWave AI Workshop</h3>
-                <p className="text-sm text-muted-foreground mb-3">Aug 2025 • 7 hours</p>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Completed intensive hands-on AI workshop focused on building advanced AI solutions using LLMs, prompt engineering, and model optimization techniques.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["AI/ML", "LLMs", "Prompt Engineering", "Model Optimization"].map((skill) => (
-                    <Badge key={skill} variant="outline" className="border-primary/30 text-primary text-xs">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border border-border hover:border-primary hover:shadow-glow-blue transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2">Deloitte Technology Virtual Job Simulation</h3>
-                <p className="text-sm text-muted-foreground mb-3">June 2025 • Forage Platform</p>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Completed virtual job simulation involving coding and development tasks aligned with real-world client needs and industry practices.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Software Development", "Client Solutions", "Problem Solving", "Industry Practices"].map((skill) => (
-                    <Badge key={skill} variant="outline" className="border-primary/30 text-primary text-xs">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Experience Timeline */}
-        <div className="mt-16 animate-fadeIn">
-          <h2 className="text-3xl font-bold text-center bg-gradient-secondary bg-clip-text text-transparent mb-12">
-            Professional Timeline
-          </h2>
-          
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border"></div>
-            
-            <div className="space-y-12">
-              {[
-                { 
-                  date: "Aug 2025", 
-                  title: "Started IBM SkillsBuild Internship", 
-                  description: "Began front-end development internship with Edunet Foundation, focusing on modern web technologies and professional skill development." 
-                },
-                { 
-                  date: "2023", 
-                  title: "Campus Ambassador at Internshala", 
-                  description: "Recognized for outstanding performance in promoting internship opportunities and organizing career development events." 
-                },
-                { 
-                  date: "2022", 
-                  title: "Started B.Tech Journey", 
-                  description: "Began Computer Science and Engineering program at GEHU, laying the foundation for technical expertise." 
-                }
-              ].map((event, index) => (
-                <div 
-                  key={event.date}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} animate-slideIn`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="flex-1"></div>
-                  
-                  {/* Timeline Dot */}
-                  <div className="relative z-10 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-glow-blue"></div>
-                  
-                  <div className="flex-1">
-                    <Card className={`mx-8 bg-card border border-border ${index % 2 === 0 ? '' : 'text-right'}`}>
-                      <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-primary mb-2">{event.date}</h3>
-                        <h4 className="font-semibold text-foreground mb-2">{event.title}</h4>
-                        <p className="text-sm text-muted-foreground">{event.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* CTA Section */}
         <div className="mt-16 text-center animate-fadeIn">
           <Card className="bg-gradient-accent p-8 border-none text-white max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Let's Work Together</h3>
             <p className="mb-6 opacity-90">
-              I'm always open to new opportunities and exciting projects. 
-              Let's discuss how we can create something amazing together!
+              I'm always open to new opportunities and exciting projects. Let's
+              discuss how we can create something amazing together!
             </p>
-            <Button 
+            <Button
               variant="outline"
               className="bg-white text-black border-white hover:bg-white/90 hover:text-black font-semibold"
               asChild

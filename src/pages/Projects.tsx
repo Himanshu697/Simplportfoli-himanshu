@@ -2,7 +2,6 @@ import { ExternalLink, Github, Eye, Zap, Brain, Search, Code, Languages } from "
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import React from "react";
 
 const Projects = () => {
   const projects = [
@@ -105,7 +104,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <Card 
+            <Card
               key={project.id}
               className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-blue-500 hover:shadow-xl transition-all duration-300"
             >
@@ -119,8 +118,11 @@ const Projects = () => {
                     {project.status}
                   </Badge>
                 </div>
+
                 <div>
-                  <CardTitle className="text-xl text-gray-800 dark:text-gray-200">{project.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-800 dark:text-gray-200">
+                    {project.title}
+                  </CardTitle>
                   <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm leading-relaxed">
                     {project.description}
                   </p>
@@ -133,9 +135,9 @@ const Projects = () => {
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 text-sm">Tech Stack:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
-                      <Badge 
-                        key={tech} 
-                        variant="outline" 
+                      <Badge
+                        key={tech}
+                        variant="outline"
                         className="border-blue-300 text-blue-600 dark:border-blue-500 dark:text-blue-400 text-xs"
                       >
                         {tech}
@@ -159,19 +161,19 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1 border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white" 
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 border-blue-300 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github size={16} className="mr-2" /> Code
                     </a>
                   </Button>
-                  <Button 
-                    size="sm" 
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600" 
+                  <Button
+                    size="sm"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600"
                     asChild
                   >
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
@@ -193,15 +195,12 @@ const Projects = () => {
               Let's build something amazing together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* Get In Touch */}
               <Button 
                 className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-100 dark:text-blue-700 font-semibold" 
                 asChild
               >
                 <a href="/contact">Get In Touch</a>
               </Button>
-
-              {/* View All Projects */}
               <Button 
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-600 dark:border-gray-200 dark:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-blue-700 font-semibold" 
                 asChild

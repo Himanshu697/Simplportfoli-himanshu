@@ -83,19 +83,6 @@ const Certificates = () => {
       image: "🤖",
       credentialId: "9SWJAFDQDQ",
       verificationUrl: "https://cdn1.ccbp.in/misc/workshop-openai-nxtwave-buildathon-genai-online-workshop-participation/9SWJAFDQDQ.png"
-    },
-    {
-      id: 7,
-      title: "Deloitte Technology Virtual Job Simulation",
-      issuer: "Deloitte (via Forage)",
-      date: "June 2025",
-      type: "Experience",
-      description: "Completed virtual job simulation involving coding and development tasks aligned with real-world client needs and industry practices.",
-      skills: ["Software Development", "Client Solutions", "Problem Solving", "Industry Practices"],
-      icon: <Medal className="text-neon-purple" size={24} />,
-      image: "💼",
-      credentialId: "DELOITTE-FORAGE-2025",
-      verificationUrl: "https://drive.google.com/file/d/1b9e0deDdfdPZ9F9SB7V7YAvXE_NbjlYx/view"
     }
   ];
 
@@ -109,15 +96,13 @@ const Certificates = () => {
         return "bg-neon-purple text-white";
       case "Workshop":
         return "bg-neon-pink text-white";
-      case "Experience":
-        return "bg-gradient-primary text-white";
       default:
         return "bg-muted text-muted-foreground";
     }
   };
 
   const stats = [
-    { label: "Certificates", value: "7+", icon: Award },
+    { label: "Certificates", value: "6+", icon: Award },
     { label: "Skills Acquired", value: "25+", icon: Star },
     { label: "Learning Hours", value: "200+", icon: Calendar }
   ];
@@ -168,13 +153,9 @@ const Certificates = () => {
                     <div className="text-3xl">{cert.image}</div>
                   </div>
                   <div className="flex flex-col items-end gap-2">
-                    <Badge className={getTypeColor(cert.type)}>
-                      {cert.type}
-                    </Badge>
+                    <Badge className={getTypeColor(cert.type)}>{cert.type}</Badge>
                     {cert.status && (
-                      <Badge variant="outline" className="border-yellow-500 text-yellow-600">
-                        {cert.status}
-                      </Badge>
+                      <Badge variant="outline" className="border-yellow-500 text-yellow-600">{cert.status}</Badge>
                     )}
                   </div>
                 </div>
@@ -195,54 +176,32 @@ const Certificates = () => {
               </CardHeader>
 
               <CardContent className="space-y-6">
-                {/* Description */}
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {cert.description}
-                </p>
-
-                {/* Skills */}
+                <p className="text-muted-foreground text-sm leading-relaxed">{cert.description}</p>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Skills Covered:</h4>
                   <div className="flex flex-wrap gap-2">
                     {cert.skills.map((skill) => (
-                      <Badge 
-                        key={skill}
-                        variant="outline" 
-                        className="border-primary/30 text-primary text-xs"
-                      >
+                      <Badge key={skill} variant="outline" className="border-primary/30 text-primary text-xs">
                         {skill}
                       </Badge>
                     ))}
                   </div>
                 </div>
-
-                {/* Credential Info */}
                 <div className="bg-muted/30 rounded-lg p-3 space-y-2">
                   <div className="text-xs text-muted-foreground">
                     <span className="font-medium">Credential ID: </span>
                     <span className="font-mono">{cert.credentialId}</span>
                   </div>
                 </div>
-
-                {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex-1 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
-                    asChild
-                  >
+                  <Button variant="outline" size="sm" className="flex-1 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground" asChild>
                     <a href={cert.verificationUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} className="mr-2" />
                       {cert.status === "In Progress" ? "View Progress" : "Verify"}
                     </a>
                   </Button>
                   {cert.status !== "In Progress" && (
-                    <Button 
-                      size="sm"
-                      className="flex-1 bg-primary hover:bg-primary/90"
-                      asChild
-                    >
+                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
                       <a href="#" download>
                         <Download size={16} className="mr-2" />
                         Download
@@ -253,111 +212,6 @@ const Certificates = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Achievement Timeline */}
-        <div className="mt-16 animate-fadeIn">
-          <h2 className="text-3xl font-bold text-center bg-gradient-secondary bg-clip-text text-transparent mb-12">
-            Learning & Career Timeline
-          </h2>
-          
-          <div className="relative max-w-4xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border"></div>
-            
-            <div className="space-y-12">
-              {[
-                { 
-                  year: "2022", 
-                  title: "Academic Foundation", 
-                  achievements: ["Started B.Tech CSE at GEHU", "Programming Fundamentals", "Technical Skills Development"] 
-                },
-                { 
-                  year: "2024", 
-                  title: "Certification Year", 
-                  achievements: ["Google Cloud Computing (NPTEL)", "Python Programming", "AWS Cloud Practitioner", "SQL & Databases"] 
-                },
-                { 
-                  year: "2025", 
-                  title: "Professional Growth", 
-                  achievements: ["IBM SkillsBuild Internship", "AI Workshop by OpenAI", "Deloitte Virtual Experience", "Advanced Projects"] 
-                }
-              ].map((period, index) => (
-                <div 
-                  key={period.year}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} animate-slideIn`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="flex-1"></div>
-                  
-                  {/* Timeline Dot */}
-                  <div className="relative z-10 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-glow-blue"></div>
-                  
-                  <div className="flex-1">
-                    <Card className={`mx-8 bg-card border border-border ${index % 2 === 0 ? '' : 'text-right'}`}>
-                      <CardContent className="p-6">
-                        <h3 className="text-lg font-bold text-primary mb-2">{period.year} - {period.title}</h3>
-                        <ul className="space-y-1">
-                          {period.achievements.map((achievement) => (
-                            <li key={achievement} className="text-sm text-muted-foreground">
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Skills Summary */}
-        <div className="mt-16 animate-fadeIn">
-          <Card className="bg-card border border-border">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl bg-gradient-primary bg-clip-text text-transparent">
-                Technical Expertise Gained
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-4 gap-6 text-center">
-                <div>
-                  <h3 className="font-semibold text-primary mb-3">Cloud Technologies</h3>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <div>Google Cloud Platform</div>
-                    <div>AWS Services</div>
-                    <div>Cloud Architecture</div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary mb-3">Programming</h3>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <div>Python</div>
-                    <div>JavaScript</div>
-                    <div>SQL</div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary mb-3">AI & ML</h3>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <div>LLMs</div>
-                    <div>Prompt Engineering</div>
-                    <div>Model Optimization</div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary mb-3">Web Development</h3>
-                  <div className="space-y-1 text-sm text-muted-foreground">
-                    <div>Frontend Technologies</div>
-                    <div>Responsive Design</div>
-                    <div>Modern Frameworks</div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

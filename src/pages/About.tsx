@@ -1,6 +1,6 @@
 import { GraduationCap, Calendar, MapPin, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import profileImage from "@/assets/himanshu-Profile-new.jpg";
+import profileImage from "@/assets/himanshu-profile-new.jpg";
 
 const About = () => {
   const journey = [

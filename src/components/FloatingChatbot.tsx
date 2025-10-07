@@ -17,7 +17,8 @@ const FloatingChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      content: "Hi! I'm Himanshu's AI assistant. Ask me anything about his skills, projects, or experience!",
+      content:
+        "Hi! I'm Himanshu's AI assistant. Ask me anything about his skills, projects, or experience!",
       isUser: false,
       timestamp: new Date(),
     },
@@ -25,17 +26,23 @@ const FloatingChatbot = () => {
   const [inputValue, setInputValue] = useState("");
 
   const predefinedResponses: Record<string, string> = {
-    skills: "Himanshu's core skills include: C++, Java, Python, HTML, CSS, JavaScript, React, Node.js, MongoDB, Express, Tailwind CSS, Git, REST APIs. He's also exploring OpenCV, Coqui TTS, Transformers, and TypeScript.",
-    projects: "Some of Himanshu's notable projects include: AI Job Automation Platform, AI Interview Simulator, Resume ATS Checker, Compiler Visualization Tool, and OCR Translator Tool.",
-    experience: "Himanshu has worked as an Internshala Student Partner (Campus Ambassador) and as a Web Developer Intern at Oasis Infobyte, where he built temperature converters, landing pages, and personal websites.",
-    education: "Himanshu is a final-year B.Tech CSE student at GEHU Bhimtal (2021-2025), with a focus on full-stack development, compiler tools, OCR, and AI.",
-    resume: "You can download Himanshu's resume from the main page using the 'Download Resume' button!",
-    contact: "You can reach Himanshu through the contact page, LinkedIn, GitHub, or Telegram. Check the contact section for all details!",
+    skills:
+      "Himanshu's core skills include: C++, Java, Python, HTML, CSS, JavaScript, React, Node.js, MongoDB, Express, Tailwind CSS, Git, REST APIs. He's also exploring OpenCV, Coqui TTS, Transformers, and TypeScript.",
+    projects:
+      "Some of Himanshu's notable projects include: AI Job Automation Platform, AI Interview Simulator, Resume ATS Checker, Compiler Visualization Tool, and OCR Translator Tool.",
+    experience:
+      "Himanshu has worked as an Internshala Student Partner (Campus Ambassador) and as a Web Developer Intern at Oasis Infobyte, where he built temperature converters, landing pages, and personal websites.",
+    education:
+      "Himanshu is a final-year B.Tech CSE student at GEHU Bhimtal (2021-2025), with a focus on full-stack development, compiler tools, OCR, and AI.",
+    resume:
+      "You can download Himanshu's resume from the main page using the 'Download Resume' button!",
+    contact:
+      "You can reach Himanshu through the contact page, LinkedIn, GitHub, or Telegram. Check the contact section for all details!",
   };
 
   const generateResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
-    
+
     if (lowerMessage.includes("skill") || lowerMessage.includes("technology") || lowerMessage.includes("tech stack")) {
       return predefinedResponses.skills;
     }
@@ -54,7 +61,7 @@ const FloatingChatbot = () => {
     if (lowerMessage.includes("contact") || lowerMessage.includes("reach") || lowerMessage.includes("connect")) {
       return predefinedResponses.contact;
     }
-    
+
     return "That's a great question! I can help you with information about Himanshu's skills, projects, experience, education, or how to contact him. What would you like to know?";
   };
 
@@ -68,9 +75,8 @@ const FloatingChatbot = () => {
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
 
-    // Simulate AI response
     setTimeout(() => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
@@ -78,16 +84,14 @@ const FloatingChatbot = () => {
         isUser: false,
         timestamp: new Date(),
       };
-      setMessages(prev => [...prev, aiResponse]);
-    }, 1000);
+      setMessages((prev) => [...prev, aiResponse]);
+    }, 800);
 
     setInputValue("");
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
-    }
+    if (e.key === "Enter") handleSendMessage();
   };
 
   return (
@@ -95,7 +99,7 @@ const FloatingChatbot = () => {
       {/* Floating Chat Button */}
       <Button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-primary shadow-glow-blue hover:shadow-glow-purple transition-all duration-300 animate-float ${
+        className={`fixed bottom-10 right-8 w-14 h-14 rounded-full bg-gradient-primary shadow-glow-blue hover:shadow-glow-purple transition-all duration-300 animate-float z-[9999] ${
           isOpen ? "hidden" : "flex"
         }`}
         size="icon"
@@ -105,9 +109,11 @@ const FloatingChatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-80 h-96 bg-card border border-border shadow-xl animate-fadeIn">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Ask Himanshu's AI</CardTitle>
+        <Card className="fixed bottom-10 right-8 w-80 h-96 bg-card border border-border shadow-2xl z-[9999] animate-fadeIn">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 border-b border-border">
+            <CardTitle className="text-sm font-medium">
+              Ask Himanshu's AI
+            </CardTitle>
             <Button
               variant="ghost"
               size="icon"
@@ -117,13 +123,16 @@ const FloatingChatbot = () => {
               <X size={16} />
             </Button>
           </CardHeader>
+
           <CardContent className="flex flex-col h-full p-4 pt-0">
             <ScrollArea className="flex-1 pr-4">
               <div className="space-y-4">
                 {messages.map((message) => (
                   <div
                     key={message.id}
-                    className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
+                    className={`flex ${
+                      message.isUser ? "justify-end" : "justify-start"
+                    }`}
                   >
                     <div
                       className={`max-w-[80%] p-3 rounded-lg text-sm ${
@@ -138,7 +147,8 @@ const FloatingChatbot = () => {
                 ))}
               </div>
             </ScrollArea>
-            <div className="flex items-center space-x-2 pt-4">
+
+            <div className="flex items-center space-x-2 pt-3">
               <Input
                 placeholder="Ask anything..."
                 value={inputValue}
@@ -146,7 +156,11 @@ const FloatingChatbot = () => {
                 onKeyPress={handleKeyPress}
                 className="flex-1"
               />
-              <Button onClick={handleSendMessage} size="icon" className="bg-primary hover:bg-primary/90">
+              <Button
+                onClick={handleSendMessage}
+                size="icon"
+                className="bg-primary hover:bg-primary/90"
+              >
                 <Send size={16} />
               </Button>
             </div>
